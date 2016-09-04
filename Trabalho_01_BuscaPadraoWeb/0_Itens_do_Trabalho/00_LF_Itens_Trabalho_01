@@ -1,0 +1,38 @@
+Trabalho de LInguagens Formais 
+
+	ok - Fechamento da equipe;
+	
+	ok - Seleção de tema - Coordenadas GPS (googleMaps -> Referencia Padrão);
+
+	Gramática Regular;
+
+		-> Alfabeto | [0-9] | - | . |
+	
+		-> Palavra -XXX.XXXXXX
+		
+		-> Propria gramatica
+
+	ok - Automato
+
+	ok - Matriz (tabela de transição)
+
+	ok - Criar Expressão regular equivalente ao Automato Finito Determinista;
+		
+		-?[0-9]{1,3}\.[0-9]+,\s?-?[0-9]{1,3}\.[0-9]+
+		
+	
+	JAVA
+	
+		Criação da tabela de transição (Matriz);
+		
+		Selecionar, no mínimo, três (3) páginas Web relacionadas com o tema;
+	
+	!! Instruções !!		
+		
+	#Desenvolver programa em Java que utiliza API criada pelo professor para capturar páginas selecionadas e realizar a busca, 
+	#que deverá retornar a todos os itens encontrados em cada página e exibi-los na tela (em console ou formulário Java);
+
+	#Criar apresentação do trabalho com todas as etapas do trabalho;
+	
+	#Apresentação em sala ao professor.
+
