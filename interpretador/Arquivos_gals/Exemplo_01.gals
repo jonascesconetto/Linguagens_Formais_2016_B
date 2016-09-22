@@ -1,0 +1,34 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+Package = gals
+ScannerCaseSensitive = true
+ScannerTable = Full
+Input = String
+Parser = SLR
+#RegularDefinitions
+ignoraveis:[\n\r\s\t]+
+numint:[0-9]+
+#Tokens
+:{ignoraveis}
+MAIS: \+
+MENOS: \-
+VEZES: \*
+DIVIDE: /
+ABRE_P: \(
+FECHA_P: \)
+INTEIRO: {numint}
+#NonTerminals
+<A>
+<B>
+<C>
+<D>
+#Grammar
+<A> ::= <A> MAIS <B> #2 | <A> MENOS <B> | <B>;
+<B> ::= <B> VEZES <C>  #3 | <B> DIVIDE <C> | <C>;
+<C> ::= MENOS <D> | <D>;
+<D> ::= ABRE_P <A> FECHA_P | INTEIRO #1;
