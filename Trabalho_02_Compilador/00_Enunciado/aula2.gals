@@ -1,0 +1,43 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+ScannerCaseSensitive = true
+ScannerTable = Full
+Input = String
+Parser = SLR
+#RegularDefinitions
+ignorar: [\ \n\t\r\s]+
+inteiro: [0-9]+
+decimal: [0-9]*\.[0-9]+
+mais: \+
+menos: \-
+aster: \*
+barra: /
+abre: \(
+fecha: \)
+variaveis: [a-z]+
+#Tokens
+:{ignorar}
+VALOR_INT:{inteiro}
+VALOR_FLOAT: {decimal}
+SOMA: {mais}
+SUB: {menos}
+MULT: {aster}
+DIV: {barra}
+AP: {abre}
+FP: {fecha}
+VAR:{variaveis}
+#NonTerminals
+<A>
+<B>
+<C>
+<D>
+#Grammar
+<A> ::= <A> SOMA <B> #4 | <A> SUB <B> | <B>;
+<B> ::= <B> MULT <C> #5 | <B> DIV <C> | <C>;
+<C> ::= SUB <C> | <D>;
+<D> ::= AP <A> FP | VALOR_INT #2  | VALOR_FLOAT #3 | VAR #1;

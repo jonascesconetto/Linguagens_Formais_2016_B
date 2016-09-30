@@ -1,0 +1,31 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+Package = circuitos
+ScannerCaseSensitive = true
+ScannerTable = Full
+Input = Stream
+Parser = SLR
+#RegularDefinitions
+numero:[0-9]+
+ignoraveis:[\n\r\s\t]+
+#Tokens
+:{ignoraveis}
+SERIE:\+
+PARALELO:/
+ABRE_P:\(
+FECHA_P:\)
+NUM:{numero}
+
+#NonTerminals
+<A>
+<B>
+<C>
+#Grammar
+<A> ::= <A> SERIE <B> | <B>;
+<B> ::= <B> PARALELO <C> | <C>;
+<C> ::= ABRE_P <A> FECHA_P | NUM;
