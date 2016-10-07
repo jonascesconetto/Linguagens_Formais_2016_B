@@ -5,10 +5,10 @@ Language = Java
 ScannerName = Lexico
 ParserName = Sintatico
 SemanticName = Semantico
-Package = circuitos
+Package = gals
 ScannerCaseSensitive = true
 ScannerTable = Full
-Input = Stream
+Input = String
 Parser = SLR
 #RegularDefinitions
 numero:[0-9]+
@@ -16,7 +16,7 @@ ignoraveis:[\n\r\s\t]+
 #Tokens
 :{ignoraveis}
 SERIE:\+
-PARALELO:/
+PARALELO:\|\|
 ABRE_P:\(
 FECHA_P:\)
 NUM:{numero}
@@ -26,6 +26,6 @@ NUM:{numero}
 <B>
 <C>
 #Grammar
-<A> ::= <A> SERIE <B> | <B>;
-<B> ::= <B> PARALELO <C> | <C>;
-<C> ::= ABRE_P <A> FECHA_P | NUM;
+<A> ::= <A> SERIE <B> #3 | <B>;
+<B> ::= <B> PARALELO <C> #2 | <C>;
+<C> ::= ABRE_P <A> FECHA_P | NUM #1;

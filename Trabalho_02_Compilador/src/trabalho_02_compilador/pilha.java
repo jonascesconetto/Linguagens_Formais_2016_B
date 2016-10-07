@@ -10,5 +10,9 @@ package trabalho_02_compilador;
  * @author jc
  */
 public class pilha {
+
+    static String pop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

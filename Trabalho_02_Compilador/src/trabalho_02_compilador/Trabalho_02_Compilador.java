@@ -14,22 +14,51 @@ import gals.SyntaticError;
 import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  *
  * @author jc
  */
-public class Trabalho_02_Compilador {
 
+//public class Trabalho_02_Compilador extends Application{
+//    
+//    public static Stack<Double> pilha = new Stack<Double>();
+//    
+//    public static void main(String[] args) {
+//        launch(); 
+//    }
+//    
+//     @Override
+//     public void start(Stage palco) throws Exception {
+//         
+//         palco.setTitle("TELA PRINCIPAL");
+//         Pane principal = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+//         Scene cena = new Scene(principal);
+//         
+//         palco.setScene(cena);
+//         palco.setWidth(600);
+//         palco.setHeight(400);
+//         palco.show();
+//     }
+//}
+
+public class Trabalho_02_Compilador {
    public static Stack<Double> pilha = new Stack<Double>();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        Lexico lex = new Lexico("(3+6)+(2/(4+3+2))");
+        Lexico lex = new Lexico("(3+6)+(2||(4+3+2))");
         
-        //Lexico lex = new Lexico("(3+3)+((2+2)/4)");
+       /// Lexico lex = new Lexico("(3+3)+((2+2)||4)");
        
         Sintatico sin = new Sintatico();
         Semantico sem = new Semantico();
